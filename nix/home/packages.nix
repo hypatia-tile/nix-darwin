@@ -7,6 +7,9 @@
     bat
     fzf
     neovim
+    cargo
+    rust-analyzer
+    rustc
     vim
     tree
     htop

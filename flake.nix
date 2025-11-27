@@ -15,6 +15,10 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -23,6 +27,7 @@
     nixpkgs,
     home-manager,
     neovim-nightly-overlay,
+    rust-overlay,
     ...
   }: let
     system = "aarch64-darwin";
@@ -32,6 +37,7 @@
     darwinConfigurations = import ./nix/darwin {
       inherit system nix-darwin home-manager;
       neovimOverlay = neovim-nightly-overlay.overlays.default;
+      rustOverlay = rust-overlay.overlays.default;
     };
     # optional: we *could* also define standalone home-manager
     # homeConfigurations =
