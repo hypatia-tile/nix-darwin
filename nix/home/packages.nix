@@ -10,6 +10,8 @@
     cargo
     rust-analyzer
     rustc
+    sqlite
+    jq
     vim
     tree
     htop
