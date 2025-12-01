@@ -13,6 +13,8 @@
     ];
     brews = [
       "llvm"
+      "make"
+      "cmake"
     ];
   };
 
