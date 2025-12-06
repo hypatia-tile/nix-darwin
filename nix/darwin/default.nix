@@ -25,7 +25,7 @@
         home-manager.backupFileExtension = "hm-bak";
 
         home-manager.users.kazukishinohara =
-          import ../home/kazukishinohara.nix;
+          import ../home/default.nix;
       }
     ];
   };
