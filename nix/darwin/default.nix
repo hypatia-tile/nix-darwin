@@ -20,12 +20,13 @@
           rustOverlay
         ];
 
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.backupFileExtension = "hm-bak";
-
-        home-manager.users.kazukishinohara =
-          import ../home/default.nix;
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          backupFileExtension = "hm-bak";
+          users.kazukishinohara =
+            import ../home/default.nix;
+        };
       }
     ];
   };
