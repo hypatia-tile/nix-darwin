@@ -50,5 +50,31 @@ $ sudo ln -s ~/github/nix-darwin /etc/nix-darwin                                
 $ ls -l /etc/nix-darwin
 ```
 
+## Overview
 
 
+```mermaid
+graph TD;
+  A0[flake.nix] --> B0[nix/darwin/default.nix];
+  A1[nix/darwin/configuration.nix] --> B1[nix/darwin/nix.nix];
+  A1 --> C1[nix/darwin/users.nix];
+  A1 --> D1[nixx/darwin/fonts.nix];
+  A1 --> E1[nix/darwin/macos.nix];
+  A2[nix/home/default.nix] --> B2[nix/home/base.nix];
+  A2 --> C2[nix/home/packages.nix];
+  A2 --> D2[nix/home/programs.nix];
+  A2 --> E2[nix/home/tex.nix];
+  B0 --> A2;
+  B0 --> A1;
+```
+
+## Memo
+
+### Nix import syntax
+
+```nix
+let
+  myModule = import ./path/to/myModuleDirectory; # This will import ./path/to/myModuleDirectory/default.nix
+in
+  myModule.someAttribute
+```
