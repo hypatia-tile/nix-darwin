@@ -1,0 +1,31 @@
+name: my-stack-app
+version: 0.1.0.0
+github: "hypatia-tile/my-stack-app"
+license: BSD3
+extra-source-files:
+  - README.md
+
+dependencies:
+  - base >= 4.14 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  my-stack-app:
+    main: Main.hs
+    source-dirs: src
+    ghc-options:
+      - -Wall
+
+tests:
+  my-stack-app-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+      - -Wall
+    dependencies:
+      - my-stack-app
+      - tasty
+      - tasty-hunit
+

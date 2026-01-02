@@ -1,0 +1,19 @@
+# Common configuration values shared across darwin and home-manager modules.
+# This file defines reusable constants to maintain DRY principles (ADR 0004).
+#
+# SETUP: Copy this file to common.nix and fill in your personal information:
+#   cp nix/common.nix.template nix/common.nix
+#
+# NOTE: common.nix is gitignored to keep personal information private.
+{
+  # Primary user account information
+  username = "YOUR_USERNAME";           # Your macOS username
+  homeDirectory = "/Users/YOUR_USERNAME"; # Your home directory path
+
+  # System information
+  hostname = "YOUR_HOSTNAME";           # Your Mac's hostname (e.g., "Johns-MacBook-Air")
+
+  # Git configuration
+  gitUserName = "YOUR_GIT_NAME";        # Your git commit name
+  gitUserEmail = "YOUR_EMAIL";          # Your git email
+}

@@ -1,0 +1,14 @@
+# Nix build results
+result
+result-*
+
+# Personal configuration (contains private information)
+nix/common.nix
+
+# macOS
+.DS_Store
+
+# Backup files
+*.bak
+*~
+*.hm-bak
