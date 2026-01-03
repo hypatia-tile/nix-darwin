@@ -3,7 +3,8 @@ result
 result-*
 
 # Personal configuration (contains private information)
-nix/common.nix
+# NOTE: nix/common.nix is tracked but uses git update-index --skip-worktree
+# to prevent accidental commits of changes. See README for details.
 
 # macOS
 .DS_Store
