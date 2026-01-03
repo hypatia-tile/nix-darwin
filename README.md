@@ -78,6 +78,35 @@ $ sudo ln -s ~/github/nix-darwin /etc/nix-darwin                                
 $ ls -l /etc/nix-darwin
 ```
 
+## Application Configuration
+
+This nix-darwin setup integrates with a separate dotfiles repository for application-specific configurations.
+
+### Configuration Strategy
+
+- **nix-darwin**: Manages package installation and system-level settings
+- **dotfiles** (`~/github/dotfiles`): Manages application configuration files
+- **Separation**: Terminal emulators (Alacritty, Kitty) and Tmux configs live in dotfiles for portability
+
+### Setup
+
+1. Clone and setup dotfiles repository:
+   ```zsh
+   git clone <your-dotfiles-repo> ~/github/dotfiles
+   cd ~/github/dotfiles
+   ./bin/dot-link.sh
+   ```
+
+2. The script symlinks configs from `~/github/dotfiles/.config/` to `~/.config/`:
+   - `alacritty/` → Alacritty terminal configuration
+   - `kitty/` → Kitty terminal configuration
+   - `tmux/` → Tmux multiplexer configuration
+   - `nvim/` → Neovim editor configuration
+
+3. nix-darwin installs the packages but does not generate config files (using `home.packages` instead of `programs.*`)
+
+This approach keeps configs portable and independent from nix-darwin while still managing installations declaratively.
+
 ## Overview
 
 

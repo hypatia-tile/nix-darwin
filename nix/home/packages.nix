@@ -2,6 +2,12 @@
   # User-level packages (no sudo required).
   # See ADR 0002 for separation of concerns between darwin and home-manager.
   home.packages = with pkgs; [
+    # Terminal emulators and multiplexers
+    # Configurations managed in ~/github/dotfiles/.config/
+    alacritty
+    kitty
+    tmux
+
     # Shell utilities
     eza
     fd
