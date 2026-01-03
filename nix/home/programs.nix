@@ -113,6 +113,86 @@ in {
       };
     };
 
+    kitty = {
+      enable = true;
+      font = {
+        name = "JetBrainsMono Nerd Font";
+        size = 14.0;
+      };
+
+      settings = {
+        # Terminal settings
+        term = "xterm-kitty";
+
+        # Window settings
+        window_padding_width = 8;
+
+        # Transparency
+        background_opacity = 0.90;
+        dynamic_background_opacity = true;
+
+        # Scrollback
+        scrollback_lines = 10000;
+
+        # Clipboard
+        clipboard_control = "write-clipboard write-primary read-clipboard-ask read-primary-ask";
+
+        # macOS optimizations
+        macos_thicken_font = 0.75;
+        macos_option_as_alt = "left";
+
+        # Audio
+        enable_audio_bell = false;
+
+        # Colors - Tokyo Night
+        background = "#1a1b26";
+        foreground = "#c0caf5";
+        cursor = "#c0caf5";
+        cursor_text_color = "#1a1b26";
+
+        # Normal colors
+        color0 = "#15161e";
+        color1 = "#f7768e";
+        color2 = "#9ece6a";
+        color3 = "#e0af68";
+        color4 = "#7aa2f7";
+        color5 = "#bb9af7";
+        color6 = "#7dcfff";
+        color7 = "#a9b1d6";
+
+        # Bright colors
+        color8 = "#414868";
+        color9 = "#f7768e";
+        color10 = "#9ece6a";
+        color11 = "#e0af68";
+        color12 = "#7aa2f7";
+        color13 = "#bb9af7";
+        color14 = "#7dcfff";
+        color15 = "#c0caf5";
+
+        # Tab bar
+        tab_bar_style = "powerline";
+        tab_bar_edge = "bottom";
+        tab_powerline_style = "slanted";
+      };
+
+      # Basic keybindings (Hammerspoon handles window management)
+      keybindings = {
+        # Tab management
+        "cmd+1" = "goto_tab 1";
+        "cmd+2" = "goto_tab 2";
+        "cmd+3" = "goto_tab 3";
+        "cmd+4" = "goto_tab 4";
+        "cmd+5" = "goto_tab 5";
+        "cmd+t" = "new_tab";
+        "cmd+w" = "close_tab";
+
+        # Clipboard
+        "cmd+c" = "copy_to_clipboard";
+        "cmd+v" = "paste_from_clipboard";
+      };
+    };
+
     # example: enable some HM-managed programs
     git = {
       enable = true;
