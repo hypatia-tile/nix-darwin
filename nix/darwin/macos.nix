@@ -12,8 +12,12 @@ in {
     enable = true;
 
     casks = [
-      "aquaskk"  # Japanese input method (not available in nixpkgs)
+      "aquaskk"       # Japanese input method (not available in nixpkgs)
+      "hammerspoon"   # Automation and window management
     ];
+
+    # Auto-start Hammerspoon at login
+    masApps = {};  # Placeholder for Mac App Store apps
     brews = [
       # Development tools requiring Homebrew's macOS-specific builds
       "llvm"     # Used for specific compilation tasks
