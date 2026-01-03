@@ -22,7 +22,12 @@ Fill in your personal details:
 - `gitUserName`: Your git commit name
 - `gitUserEmail`: Your git email
 
-**Note**: `nix/common.nix` is gitignored to keep your personal information private.
+**Note**: `nix/common.nix` is tracked by git (required for Nix flakes to evaluate it), but uses `git update-index --skip-worktree` to prevent future changes from being committed. This keeps your personal information local while satisfying flake requirements.
+
+If you need to modify this file on a new machine:
+1. Copy and edit: `cp nix/common.nix.template nix/common.nix`
+2. The file is already tracked, so nix-darwin will work immediately
+3. Your local changes will not appear in `git status` or be committed
 
 ## Prerequisites
 
@@ -105,6 +110,32 @@ This configuration follows established Architecture Decision Records (ADRs) for 
 - **[ADR 0004](docs/adr/0004-configuration-patterns.md)**: Configuration Patterns and Best Practices
 
 See [docs/adr/README.md](docs/adr/README.md) for the complete ADR index.
+
+## Troubleshooting
+
+### Managing nix/common.nix
+
+The `nix/common.nix` file uses git's `skip-worktree` feature to stay tracked (for Nix flakes) while preventing local changes from being committed.
+
+**To check skip-worktree status:**
+```zsh
+git ls-files -v | grep common.nix
+# "S" prefix means skip-worktree is enabled
+```
+
+**To temporarily disable skip-worktree (e.g., to restore from git):**
+```zsh
+git update-index --no-skip-worktree nix/common.nix
+git restore nix/common.nix
+git update-index --skip-worktree nix/common.nix
+```
+
+**To view differences between your local file and git version:**
+```zsh
+git update-index --no-skip-worktree nix/common.nix
+git diff nix/common.nix
+git update-index --skip-worktree nix/common.nix
+```
 
 ## Memo
 
