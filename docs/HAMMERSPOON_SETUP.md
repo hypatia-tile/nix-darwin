@@ -4,7 +4,7 @@
 
 Hammerspoon is installed via Homebrew and configured via nix-darwin home-manager.
 
-**Configuration file**: Managed by Nix at `nix/home/base.nix` → `~/.hammerspoon/init.lua`
+**Configuration file**: Managed in dotfiles at `~/github/dotfiles/.hammerspoon/init.lua` → `~/.hammerspoon/init.lua`
 
 ---
 
@@ -90,35 +90,28 @@ Result: Kitty on left, browser on right
 
 ### Location
 
-- **Source**: `nix/home/base.nix` (managed by Nix)
-- **Generated**: `~/.hammerspoon/init.lua` (auto-created on rebuild)
+- **Source**: `~/github/dotfiles/.hammerspoon/init.lua` (managed in dotfiles)
+- **Symlink**: `~/.hammerspoon/init.lua` (created by dot-link.sh)
 
 ### Customization
 
-Edit `nix/home/base.nix` to customize:
+Edit `~/github/dotfiles/.hammerspoon/init.lua` directly:
 
-```nix
-home.file.".hammerspoon/init.lua".text = ''
-  -- Your custom Hammerspoon configuration here
+```lua
+-- Your custom Hammerspoon configuration here
 
-  -- Example: Change Kitty hotkey to Cmd+Alt+T
-  hs.hotkey.bind({"cmd", "alt"}, "T", function()
-    local kitty = hs.application.find("kitty")
-    if kitty then
-      kitty:activate()
-    else
-      hs.application.open("kitty")
-    end
-  end)
-'';
+-- Example: Change Kitty hotkey to Cmd+Alt+T
+hs.hotkey.bind({"cmd", "alt"}, "T", function()
+  local kitty = hs.application.find("kitty")
+  if kitty then
+    kitty:activate()
+  else
+    hs.application.open("kitty")
+  end
+end)
 ```
 
-Then rebuild:
-```bash
-darwin-rebuild switch
-```
-
-And reload Hammerspoon:
+Then reload Hammerspoon:
 ```bash
 # Press Cmd+Alt+R
 # Or: Open Hammerspoon → Reload Config
@@ -204,8 +197,9 @@ end)
 
 ### After Installation
 
-1. **Install**: Run `darwin-rebuild switch`
-2. **Open Hammerspoon**:
+1. **Install nix-darwin**: Run `darwin-rebuild switch`
+2. **Symlink dotfiles**: Run `cd ~/github/dotfiles && ./bin/dot-link.sh`
+3. **Open Hammerspoon**:
    - Spotlight (`Cmd+Space`) → "Hammerspoon"
    - Or: `/Applications/Hammerspoon.app`
 3. **Grant Accessibility Permission**:
@@ -241,8 +235,9 @@ System Settings → Privacy & Security → Accessibility → Hammerspoon ✓
 ### Configuration Not Applied
 
 ```bash
-# Rebuild to regenerate ~/.hammerspoon/init.lua
-darwin-rebuild switch
+# Re-symlink dotfiles if needed
+cd ~/github/dotfiles
+./bin/dot-link.sh
 
 # Reload Hammerspoon
 # Press Cmd+Alt+R
@@ -339,7 +334,7 @@ end)
 
 **Installation**: Via Homebrew cask (managed by Nix)
 
-**Configuration**: Via home-manager (`nix/home/base.nix`)
+**Configuration**: Via dotfiles (`~/github/dotfiles/.hammerspoon/init.lua`)
 
 **Reload**: `Cmd+Alt+R`
 
@@ -351,4 +346,4 @@ end)
 
 ---
 
-*Hammerspoon configuration managed by nix-darwin*
+*Hammerspoon installed by nix-darwin, configured via dotfiles*

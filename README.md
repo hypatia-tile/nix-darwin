@@ -97,13 +97,19 @@ This nix-darwin setup integrates with a separate dotfiles repository for applica
    ./bin/dot-link.sh
    ```
 
-2. The script symlinks configs from `~/github/dotfiles/.config/` to `~/.config/`:
-   - `alacritty/` → Alacritty terminal configuration
-   - `kitty/` → Kitty terminal configuration
-   - `tmux/` → Tmux multiplexer configuration
-   - `nvim/` → Neovim editor configuration
+2. The script creates symlinks:
+   - **XDG configs** (`~/github/dotfiles/.config/` → `~/.config/`):
+     - `alacritty/` → Alacritty terminal configuration
+     - `kitty/` → Kitty terminal configuration
+     - `tmux/` → Tmux multiplexer configuration
+     - `nvim/` → Neovim editor configuration
+   - **Home directory configs** (`~/github/dotfiles/` → `~/`):
+     - `.hammerspoon/` → Hammerspoon window manager configuration
 
-3. nix-darwin installs the packages but does not generate config files (using `home.packages` instead of `programs.*`)
+3. nix-darwin manages:
+   - Package installation (using `home.packages` instead of `programs.*`)
+   - Hammerspoon auto-start via launchd
+   - System-level settings
 
 This approach keeps configs portable and independent from nix-darwin while still managing installations declaratively.
 
