@@ -18,6 +18,7 @@
     htop
     jq
     sqlite
+    zsh-abbr
 
     # Editors
     neovim
