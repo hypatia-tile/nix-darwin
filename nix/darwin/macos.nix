@@ -28,6 +28,7 @@ in {
       "llvm" # Used for specific compilation tasks
       "make" # GNU make (supplements system make)
       "cmake" # Build system generator
+      "olets/tap/zsh-abbr" # Zsh abbreviation tool
     ];
   };
 
