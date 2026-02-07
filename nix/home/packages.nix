@@ -39,6 +39,11 @@
     deadnix # Detects unused dependencies in Nix files
     nil # Nix language server
 
+    # Language servers
+    vim-language-server
+    bash-language-server
+    lua-language-server
+
     # AI coding assistants
     copilot-language-server
     claude-code
