@@ -19,6 +19,7 @@ in {
     casks = [
       "aquaskk" # Japanese input method (not available in nixpkgs)
       "hammerspoon" # Automation and window management
+      "nikitabobko/tap/aerospace" # Aerospace is i3-like tiling window manager for macOS
     ];
 
     # Auto-start Hammerspoon at login
