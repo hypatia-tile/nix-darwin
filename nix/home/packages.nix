@@ -34,6 +34,12 @@
     nodejs_24
     typescript-language-server
 
+    # Languages
+    lua5_1
+
+    # Package managers
+    luarocks
+
     # Nix tools
     alejandra # Nix code formatter
     statix # Nix linter
