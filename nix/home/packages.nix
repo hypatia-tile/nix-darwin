@@ -18,6 +18,7 @@
     htop
     jq
     sqlite
+    ghq
 
     # Editors
     neovim
