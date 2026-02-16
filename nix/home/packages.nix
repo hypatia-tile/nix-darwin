@@ -36,9 +36,11 @@
 
     # Languages
     lua5_1
+    jdk21_headless
 
     # Package managers
     luarocks
+    jdt-language-server
 
     # Nix tools
     alejandra # Nix code formatter
