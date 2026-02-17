@@ -42,6 +42,9 @@
     luarocks
     jdt-language-server
 
+    # Build tools
+    gradle
+
     # Nix tools
     alejandra # Nix code formatter
     statix # Nix linter
