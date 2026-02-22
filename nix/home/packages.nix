@@ -33,6 +33,7 @@
     lazygit
     nodejs_24
     typescript-language-server
+    flutter
 
     # Languages
     lua5_1
