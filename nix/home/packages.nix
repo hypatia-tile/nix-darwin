@@ -19,6 +19,7 @@
     jq
     sqlite
     ghq
+    delta
 
     # Editors
     neovim

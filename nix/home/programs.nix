@@ -5,15 +5,6 @@
 }: let
   userConfig = import ../common.nix;
 in {
-  # Create git commit template file
-  xdg.configFile."git/commit_template.txt".text = ''
-    # <type>: <subject> (50 chars max)
-
-    # <body> - Explain what and why, not how (wrap at 72 chars)
-
-    # Type: feat, fix, docs, style, refactor, test, chore
-  '';
-
   programs = {
     direnv = {
       enable = true;
@@ -30,14 +21,7 @@ in {
 
     # example: enable some HM-managed programs
     git = {
-      enable = true;
-      userName = userConfig.gitUserName;
-      userEmail = userConfig.gitUserEmail;
-      extraConfig = {
-        init.defaultBranch = "main";
-        core.editor = "nvim";
-        commit.template = "${config.xdg.configHome}/git/commit_template.txt";
-      };
+      enable = false;
     };
     # Zsh: managed in dotfiles, symlinked via dot-link.sh
     # Configuration files: ~/github/dotfiles/.config/zsh/
