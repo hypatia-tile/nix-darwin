@@ -29,6 +29,8 @@ in {
     # Zsh is still enabled system-wide in nix/darwin/users.nix for shell compatibility
     zsh.enable = false;
 
+    helix.enable = false;
+
     home-manager.enable = true;
   };
 }

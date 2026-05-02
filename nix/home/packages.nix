@@ -24,6 +24,7 @@
     # Editors
     neovim
     vim
+    helix
 
     # Development tools
     cargo
