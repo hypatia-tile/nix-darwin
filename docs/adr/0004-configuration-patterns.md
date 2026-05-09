@@ -14,7 +14,7 @@ Nix expressions can be written in many ways, but inconsistent patterns make the 
 
 **Standard Module Template**:
 ```nix
-{ pkgs, config, lib, ... }:  # 1. Function parameters
+{ pkgs, ... }:  # 1. Only declare parameters you actually use
 {
   # 2. Imports (if any)
   imports = [
@@ -33,7 +33,7 @@ Nix expressions can be written in many ways, but inconsistent patterns make the 
 ```
 
 **Rules**:
-1. **Parameter declaration**: Always include `{ pkgs, config, ... }` even if unused
+1. **Parameter declaration**: Only declare parameters you actually use; use `{ ... }:` for modules that need none
 2. **Imports first**: Place all imports at the top
 3. **Logical grouping**: Group related settings together
 4. **Comments for context**: Explain reasoning, not obvious facts

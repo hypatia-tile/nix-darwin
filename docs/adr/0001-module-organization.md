@@ -26,9 +26,8 @@ nix/
 └── home/            # User-level configurations (home-manager)
     ├── default.nix  # Entry point, aggregates home modules
     ├── base.nix     # Core home-manager settings
-    ├── packages.nix # User package installations
-    ├── programs.nix # Program-specific configurations
-    └── tex.nix      # LaTeX/TeX environment
+    ├── packages.nix # User package installations (includes TeX)
+    └── programs.nix # Program-specific configurations
 ```
 
 ### Organization Principles

@@ -132,7 +132,6 @@ graph LR;
   C0 -.-> C1;
   C0 -.-> E1;
   C0 -.-> B2;
-  C0 -.-> D2;
 ```
 
 ## Architecture
