@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 # User account management for nix-darwin.
 # Defines system users and enables required shells.
 let
@@ -8,7 +8,6 @@ in {
   programs.zsh.enable = true;
 
   users.users.${userConfig.username} = {
-    name = userConfig.username;
     home = userConfig.homeDirectory;
     # Shell is configured via home-manager (see nix/home/programs.nix)
   };

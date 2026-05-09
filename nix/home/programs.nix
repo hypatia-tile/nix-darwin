@@ -1,10 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: let
-  userConfig = import ../common.nix;
-in {
+{ ... }: {
   programs = {
     direnv = {
       enable = true;

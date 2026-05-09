@@ -1,9 +1,4 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}: let
+{ ... }: let
   userConfig = import ../common.nix;
 in {
   # Drop configuration Revision for now to keep it simple
@@ -21,7 +16,6 @@ in {
       "nikitabobko/tap/aerospace" # Aerospace is i3-like tiling window manager for macOS
     ];
 
-    # Auto-start Hammerspoon at login
     masApps = {}; # Placeholder for Mac App Store apps
     brews = [
       # Development tools requiring Homebrew's macOS-specific builds

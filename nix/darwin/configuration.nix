@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 # Main configuration aggregator for nix-darwin system-level settings.
 # This module imports all darwin domain-specific configurations.
 {

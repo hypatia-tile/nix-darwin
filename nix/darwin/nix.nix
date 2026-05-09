@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ ... }:
 
 {
   # Disable nix-darwin's Nix daemon management.
