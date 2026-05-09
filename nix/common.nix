@@ -10,5 +10,5 @@
 
   # Git configuration
   gitUserName = "shinokun";
-  gitUserEmail = "hypatia.tile02021@grail.com";
+  gitUserEmail = "hypatia.tile02021@gmail.com";
 }
