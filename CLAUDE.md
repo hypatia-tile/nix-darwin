@@ -35,7 +35,7 @@ flake.nix
       └─ home-manager module
           └─ nix/home/default.nix     # aggregates home modules
               ├─ nix/home/base.nix    # XDG dirs, session vars, launchd agents
-              ├─ nix/home/packages.nix # user CLI packages (~68 packages)
+              ├─ nix/home/packages.nix # user CLI packages (~42 packages)
               └─ nix/home/programs.nix # direnv + home-manager self-management
 ```
 

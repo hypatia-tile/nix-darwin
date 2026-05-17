@@ -21,6 +21,9 @@
     ghq
     delta
 
+    # Git utilities
+    git-filter-repo
+
     # Editors
     neovim
     vim
