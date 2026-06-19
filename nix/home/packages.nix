@@ -68,5 +68,8 @@
 
     # TeX/LaTeX environment
     texlive.combined.scheme-full
+
+    # zenn cli
+    zenn-cli
   ];
 }
