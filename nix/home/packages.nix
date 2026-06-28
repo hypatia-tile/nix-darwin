@@ -65,6 +65,7 @@
     # AI coding assistants
     copilot-language-server
     claude-code
+    codex
 
     # TeX/LaTeX environment
     texlive.combined.scheme-full
